@@ -6,16 +6,18 @@
 //Each character has a certain amount of health and attk points
 //In order to win the game, the user must defeat all 3 enemies
 //Once the game ends
-    //If the user wins there will be a winning message
-    //If the user loses there will be a losing message
-    //Both messages will have a restart button tagged along
+//If the user wins there will be a winning message
+//If the user loses there will be a losing message
+//Both messages will have a restart button tagged along
+
+$(document).ready(function () {
 
     var selectedCharacter = "";
     var selectedEnemy = "";
     var selectedCharacterId = "";
     var selectedEnemyId = "";
-    
-$(document).ready(function () {   
+    var selectedCharacterHealth = "";
+    var selectedEnemyHealth = "";
 
     //Characters should be objects
     var thor = {
@@ -65,12 +67,12 @@ $(document).ready(function () {
         //copies the html from our characters div, but filtering out the already selected character by concatenating our id name with the "#" and removing it from the code. Then rewriting this new code into our enemies div.
         $("#enemies").append($("#characters").clone().find("#" + selectedCharacterId).remove().end().html());
         //our selected character will be the only html in our characters div
-        $("#characters").html(selectedCharacter); 
+        $("#characters").html(selectedCharacter);
         console.log(selectedCharacter);
         console.log(selectedCharacterId);
 
 
-        $(".test").click(function() {
+        $(".test").click(function () {
             //click on the enemy you wish to battle
             selectedEnemy = $(this);
             //this variable finds the id name of the enemy you chose so that we can use it later
@@ -82,78 +84,83 @@ $(document).ready(function () {
             // $(selectedEnemy).switchClass("marvel", selectedEnemy);
             console.log(selectedEnemy);
             console.log(selectedEnemyId);
-        });
 
 
-        //CHARACTER IF STATEMENTS
 
-        //if our selected character is thor, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
-        if (selectedCharacterId == "thor") {
-            selectedCharacter === thor;
-            for (var health in thor) selectedCharacter["health"] = thor.attack;
-            for (var attack in thor) selectedCharacter["attack"] = thor.attack;
-   
-       
-        //if our selected character is black panther, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
-        } else if (selectedCharacterId == "blackpanther") {
-            selectedCharacter === blackPanther;
-            for (var health in blackPanther) selectedCharacter["health"] = blackPanther.health;
-            for (var attack in blackPanther) selectedCharacter["attack"] = blackPanther.attack;
+            //CHARACTER IF STATEMENTS
 
-        //if our selected character is loki, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
-        } else if (selectedCharacterId == "loki") {
-            selectedCharacter === loki;
-            for (var health in loki) selectedCharacter["health"] = loki.health;
-            for (var attack in loki) selectedCharacter["attack"] = loki.attack;
-
-        //if our selected character is killmonger we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
-
-        } else if (selectedCharacterId == "killmonger") {
-            selectedCharacter === killmonger;
-            for (var health in killmonger) selectedCharacter["health"] = killmonger.health;
-            for (var attack in killmonger) selectedCharacter["attack"] = killmonger.attack;
-        };
+            //if our selected character is thor, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
+            if (selectedCharacterId == "thor") {
+                selectedCharacter === thor;
+                for (var health in thor) selectedCharacter[health] = thor[health];
+                for (var attack in thor) selectedCharacter[attack] = thor[attack];
 
 
-        //ENEMY IF STATEMENTS
+                //if our selected character is black panther, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
+            } else if (selectedCharacterId == "blackpanther") {
+                selectedCharacter === blackPanther;
+                for (var health in blackPanther) selectedCharacter[health] = blackPanther.health;
+                for (var attack in blackPanther) selectedCharacter[attack] = blackPanther.attack;
 
-        //same for Thor as above, but only if he is chosen as an enemy
-        if (selectedEnemyId == "thor") {
-            selectedEnemy === thor;
-            for (var health in thor) selectedEnemy["health"] = thor.health;
-            for (var attack in thor) selectedEnemy["attack"] = thor.attack;
+                //if our selected character is loki, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
+            } else if (selectedCharacterId == "loki") {
+                selectedCharacter === loki;
+                for (var health in loki) selectedCharacter[health] = loki[health];
+                for (var attack in loki) selectedCharacter[attack] = loki[attack];
 
-        //same for black panther as above, but only if he is chosen as an enemy
-        } else if (selectedEnemyId == "blackpanther") {
-            selectedEnemy === blackPanther;
-            for (var health in blackPanther) selectedEnemy["health"] = blackPanther.health;
-            for (var attack in blackPanther) selectedEnemy[attack] = blackPanther.attack;
-            console.log(blackPanther.attack);
+                //if our selected character is killmonger we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
 
-        } else if (selectedEnemyId == "loki") {
-            selectedEnemy === loki;
-            for (var health in loki) selectedEnemy["health"] = loki.health;
-            for (var attack in loki) selectedEnemy["attack"] = loki.attack;
+            } else if (selectedCharacterId == "killmonger") {
+                selectedCharacter === killmonger;
+                for (var health in killmonger) selectedCharacter[health] = killmonger[health];
+                for (var attack in killmonger) selectedCharacter[attack] = killmonger[attack];
+            };
 
-        } else if (selectedEnemyId == "killmonger") {
-            selectedEnemy === killmonger;
+
+            //ENEMY IF STATEMENTS
+
+            //same for Thor as above, but only if he is chosen as an enemy
+            if (selectedEnemyId == "thor") {
+                selectedEnemy === thor;
+                for (var health in thor) selectedEnemy[health] = thor[health];
+                for (var attack in thor) selectedEnemy[attack] = thor[attack];
+
+                //same for black panther as above, but only if he is chosen as an enemy
+            } else if (selectedEnemyId == "blackpanther") {
+                selectedEnemy === blackPanther;
+                for (var health in blackPanther) selectedEnemy[health] = blackPanther[health];
+                for (var attack in blackPanther) selectedEnemy[attack] = blackPanther[attack];
+                console.log(blackPanther[attack]);
+
+                //same for loki as above, but only if he is chosen as an enemy
+            } else if (selectedEnemyId == "loki") {
+                selectedEnemy === loki;
+                for (var health in loki) selectedEnemy[health] = loki[health];
+                for (var attack in loki) selectedEnemy[attack] = loki[attack];
+
+                //same for killmonger as above, but only if he is chosen as an enemy
+            } else if (selectedEnemyId == "killmonger") {
+                selectedEnemy === killmonger;
+                console.log(selectedEnemy);
+                for (var health in killmonger) selectedEnemy[health] = killmonger[health];
+                for (var attack in killmonger) selectedEnemy[attack] = killmonger[attack];
+            };
+
+            console.log(selectedCharacter);
             console.log(selectedEnemy);
-            for (var health in killmonger) selectedEnemy["health"] = killmonger.health;
-            for (var attack in killmonger) selectedEnemy["attack"] = killmonger.attack;
-        };
-
-        console.log(selectedCharacter);
-        console.log(selectedEnemy);
+            
 
 
-    $(".btn").click(function () {
-        selectedCharacter[health] = selectedCharacter[health] - selectedEnemy[attack];
+            $(".btn").click(function () {
+                selectedCharacterHealth =  selectedCharacter[health] - selectedEnemy[attack];
+                $("#" + selectedCharacterId + "health").html(selectedCharacterHealth);
+            });
+        
+        console.log(selectedCharacterHealth);
         console.log(selectedCharacter[health]);
         console.log(selectedEnemy[attack]);
-    });    
 
-
-
+        });
 
 
     });
@@ -161,9 +168,9 @@ $(document).ready(function () {
 
 
 
-    
 
-    
+
+
 
 
 
