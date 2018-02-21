@@ -1,0 +1,48 @@
+body {
+    background-image: url("../images/avengers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+/*Header*/
+.bg-light {
+    background-color: #fa5261!important;
+    margin-bottom: 20px;
+}
+
+
+/*Characters*/
+.card {
+    border: 1px solid #fa5261;
+    width: 255px;
+    height: 180px;
+}
+
+.card-footer {
+    background-color: white;
+    border-top: none;
+    padding: 0rem;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: none;
+}
+
+.card-body {
+    padding: 0 1.25rem;
+}
+
+.card-header {
+    font-size: 18px;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+}
+

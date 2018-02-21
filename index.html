@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MCU RPG Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">
+            <h1>RPG GAME</h1>
+        </span>
+    </nav>
+
+    <div class="container">
+        <div class="row" id="characters">
+            <div class="col-md-3 marvel" id="thor">
+                <div class="card text-center" >
+                    <div class="card-header thorname">
+                        Thor
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="thorimage">
+                            <img src="./assets/images/thor.jpg" alt="Thor">
+                        </p>
+
+                    </div>
+                    <div class="card-footer text-muted" id="thorhealth">
+                        125
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 marvel" id="blackpanther">
+                <div class="card text-center" >
+                    <div class="card-header panthername">
+                        Black Panther
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="pantherimage">
+                            <img src="./assets/images/black-panther.jpg" alt="Black Panther">
+                        </p>
+
+                    </div>
+                    <div class="card-footer text-muted" id="pantherhealth">
+                        150
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 marvel" id="loki">
+                <div class="card text-center" >
+                    <div class="card-header lokiname">
+                        Loki
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="lokiimage">
+                            <img src="./assets/images/loki.png">
+                        </p>
+
+                    </div>
+                    <div class="card-footer text-muted" id="lokihealth">
+                        100
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 marvel" id="killmonger">
+                <div class="card text-center" >
+                    <div class="card-header killmongername">
+                        Killmonger
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="killmongerimage">
+                            <img src="./assets/images/killmonger.jpg">
+                        </p>
+
+                    </div>
+                    <div class="card-footer text-muted" id="killmongerhealth">
+                        175
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Your Characters</h2>
+        </div>
+        <div class="row">
+            <h2>Enemies</h2>
+        </div>
+        <div class="row" id="enemies">
+
+        </div>
+
+        <div class="row">
+            <h2>Fight Section</h2>
+        </div>
+
+        <div class="row" id="fight">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary btn-sm">Attack!</button>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Defender</h2>
+        </div>
+
+        <div class="row" id="defender">
+            
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/javascript/game.js">
+
+    </script>
+</body>
+
+</html>
