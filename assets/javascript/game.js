@@ -157,8 +157,11 @@ $(document).ready(function () {
         });
 
         $("#attack").on('click', function attack() {
+            //Character HP
             selectedCharacter["health"] = selectedCharacter["health"] - selectedEnemy["attack"];
             $("#" + selectedCharacterId + "health").html(selectedCharacter["health"]);
+
+            //Enemy HP
             selectedEnemy["health"] = selectedEnemy["health"] - selectedCharacter["attack"];
             $("#" + selectedEnemyId + "health").html(selectedEnemy["health"]);
 
@@ -166,6 +169,10 @@ $(document).ready(function () {
             console.log(selectedEnemy["attack"]);
             console.log(selectedCharacter["attack"]);
             console.log(selectedEnemy["health"]);
+     
+        });
+
+    
 
             if (selectedCharacter["health"] <= 0) {
                 $("#winlose").html("<div class='col-md-3'> <p>You lose! GAME OVER!</p> <button type='button' class='btn btn-primary btn-sm' id='restart'>Restart!</button>");
@@ -173,18 +180,16 @@ $(document).ready(function () {
                     location.reload();
                 });
 
-                //Reset button appears
-            $("#button").attr("disabled", true);
+            $("#attack").attr("disabled", true);
+
             } else if (selectedEnemy["health"] <= 0) {
                 $("#defender").html("You won this round! Choose a new defender!");
-                //Enemy disappears and user can choose a new one
-                //If enemyselected is undefined user wins entire game
+                //If enemyselected is undefined user wins round
                 //Reset button appears
 
             }
 
-        });   
-
+        
     });
 
 
