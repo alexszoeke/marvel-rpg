@@ -16,8 +16,6 @@ $(document).ready(function () {
     var selectedEnemy = "";
     var selectedCharacterId = "";
     var selectedEnemyId = "";
-    var selectedCharacterHealth = "";
-    var selectedEnemyHealth = "";
 
     //Characters should be objects
     var thor = {
@@ -26,6 +24,7 @@ $(document).ready(function () {
         "attack": 20,
         "hammer": 0,
         "id": $("#thor")
+        //Hammer  enables "special features" for the attack property
 
     }
 
@@ -36,30 +35,33 @@ $(document).ready(function () {
         "attack": 20,
         "claws": 0,
         "id": $("#blackpanther")
+        //Claws enables "special features" for the attack property
 
     };
 
     var loki = {
         "name": $(".lokiname").html("Loki"),
-        "health": $("#lokihealth").html(100),
-        "attack": 0,
+        "health": 100,
+        "attack": 20,
         "sneaky": 0,
         "id": $("#loki")
+        //Sneaky enables "health boosts"
 
     };
 
     var killmonger = {
         "name": $(".killmongername").html("Killmonger"),
-        "health": $("#killmongerhealth").html(175),
+        "health": 175,
         "attack": 20,
         "revenge": 0,
         "id": $("#killmonger")
+        //Revenge enables "health boosts" (I'm sure none of that makes any sense, just go with it.)
 
     };
 
     //CHOOSE CHARACTERS AND ENEMIES
 
-    $(".marvel").click(function () {
+    $(".marvel").click(function chooseCharacter() {
         //click on any character you wish to start with, this stores which character you chose
         selectedCharacter = $(this);
         //these variable provides the id and class names of the character you chose so that we can use it later
@@ -72,7 +74,7 @@ $(document).ready(function () {
         console.log(selectedCharacterId);
 
 
-        $(".test").click(function () {
+        $(".test").click(function chooseEnemy() {
             //click on the enemy you wish to battle
             selectedEnemy = $(this);
             //this variable finds the id name of the enemy you chose so that we can use it later
@@ -92,28 +94,28 @@ $(document).ready(function () {
             //if our selected character is thor, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
             if (selectedCharacterId == "thor") {
                 selectedCharacter === thor;
-                for (var health in thor) selectedCharacter[health] = thor[health];
-                for (var attack in thor) selectedCharacter[attack] = thor[attack];
+                for (var health in thor) selectedCharacter["health"] = thor["health"];
+                for (var attack in thor) selectedCharacter["attack"] = thor["attack"];
 
 
                 //if our selected character is black panther, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
             } else if (selectedCharacterId == "blackpanther") {
                 selectedCharacter === blackPanther;
-                for (var health in blackPanther) selectedCharacter[health] = blackPanther.health;
-                for (var attack in blackPanther) selectedCharacter[attack] = blackPanther.attack;
+                for (var health in blackPanther) selectedCharacter["health"] = blackPanther["health"];
+                for (var attack in blackPanther) selectedCharacter["attack"] = blackPanther["attack"];
 
                 //if our selected character is loki, we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
             } else if (selectedCharacterId == "loki") {
                 selectedCharacter === loki;
-                for (var health in loki) selectedCharacter[health] = loki[health];
-                for (var attack in loki) selectedCharacter[attack] = loki[attack];
+                for (var health in loki) selectedCharacter["health"] = loki["health"];
+                for (var attack in loki) selectedCharacter["attack"] = loki["attack"];
 
                 //if our selected character is killmonger we wanted to assign our selected character variable to his object and in order to make the properties accesable with a different variable we have to make a new object
 
             } else if (selectedCharacterId == "killmonger") {
                 selectedCharacter === killmonger;
-                for (var health in killmonger) selectedCharacter[health] = killmonger[health];
-                for (var attack in killmonger) selectedCharacter[attack] = killmonger[attack];
+                for (var health in killmonger) selectedCharacter["health"] = killmonger["health"];
+                for (var attack in killmonger) selectedCharacter["attack"] = killmonger["attack"];
             };
 
 
@@ -122,46 +124,62 @@ $(document).ready(function () {
             //same for Thor as above, but only if he is chosen as an enemy
             if (selectedEnemyId == "thor") {
                 selectedEnemy === thor;
-                for (var health in thor) selectedEnemy[health] = thor[health];
-                for (var attack in thor) selectedEnemy[attack] = thor[attack];
+                for (var health in thor) selectedEnemy["health"] = thor["health"];
+                for (var attack in thor) selectedEnemy["attack"] = thor["attack"];
 
                 //same for black panther as above, but only if he is chosen as an enemy
             } else if (selectedEnemyId == "blackpanther") {
                 selectedEnemy === blackPanther;
-                for (var health in blackPanther) selectedEnemy[health] = blackPanther[health];
-                for (var attack in blackPanther) selectedEnemy[attack] = blackPanther[attack];
-                console.log(blackPanther[attack]);
+                for (var health in blackPanther) selectedEnemy["health"] = blackPanther["health"];
+                for (var attack in blackPanther) selectedEnemy["attack"] = blackPanther["attack"];
+                console.log(blackPanther["attack"]);
 
                 //same for loki as above, but only if he is chosen as an enemy
             } else if (selectedEnemyId == "loki") {
                 selectedEnemy === loki;
-                for (var health in loki) selectedEnemy[health] = loki[health];
-                for (var attack in loki) selectedEnemy[attack] = loki[attack];
+                for (var health in loki) selectedEnemy["health"] = loki["health"];
+                for (var attack in loki) selectedEnemy["attack"] = loki["attack"];
 
                 //same for killmonger as above, but only if he is chosen as an enemy
             } else if (selectedEnemyId == "killmonger") {
                 selectedEnemy === killmonger;
                 console.log(selectedEnemy);
-                for (var health in killmonger) selectedEnemy[health] = killmonger[health];
-                for (var attack in killmonger) selectedEnemy[attack] = killmonger[attack];
+                for (var health in killmonger) selectedEnemy["health"] = killmonger["health"];
+                for (var attack in killmonger) selectedEnemy["attack"] = killmonger["attack"];
             };
 
             console.log(selectedCharacter);
             console.log(selectedEnemy);
-            
+            console.log(selectedCharacter["health"]);
+            console.log(selectedEnemy["attack"]);
 
-
-            $(".btn").click(function () {
-                selectedCharacterHealth =  selectedCharacter[health] - selectedEnemy[attack];
-                $("#" + selectedCharacterId + "health").html(selectedCharacterHealth);
-            });
-        
-        console.log(selectedCharacterHealth);
-        console.log(selectedCharacter[health]);
-        console.log(selectedEnemy[attack]);
 
         });
 
+        $("#button").on('click', function attack() {
+            selectedCharacter["health"] = selectedCharacter["health"] - selectedEnemy["attack"];
+            $("#" + selectedCharacterId + "health").html(selectedCharacter["health"]);
+            selectedEnemy["health"] = selectedEnemy["health"] - selectedCharacter["attack"];
+            $("#" + selectedEnemyId + "health").html(selectedEnemy["health"]);
+
+            console.log(selectedCharacter["health"]);
+            console.log(selectedEnemy["attack"]);
+            console.log(selectedCharacter["attack"]);
+            console.log(selectedEnemy["health"]);
+
+            if (selectedCharacter["health"] <= 0) {
+                $("#winlose").html("You lose! GAME OVER!");
+                //Reset button appears
+            $("#button").attr("disabled", true);
+            } else if (selectedEnemy["health"] <= 0) {
+                $("#defender").html("You won this round! Choose a new defender!");
+                //Enemy disappears and user can choose a new one
+                //If enemyselected is undefined user wins entire game
+                //Reset button appears
+
+            }
+
+        });   
 
     });
 
@@ -184,7 +202,8 @@ $(document).ready(function () {
 
 
 
-});
 
+
+});
 
 
