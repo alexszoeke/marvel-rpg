@@ -156,7 +156,7 @@ $(document).ready(function () {
 
         });
 
-        $("#button").on('click', function attack() {
+        $("#attack").on('click', function attack() {
             selectedCharacter["health"] = selectedCharacter["health"] - selectedEnemy["attack"];
             $("#" + selectedCharacterId + "health").html(selectedCharacter["health"]);
             selectedEnemy["health"] = selectedEnemy["health"] - selectedCharacter["attack"];
@@ -168,7 +168,11 @@ $(document).ready(function () {
             console.log(selectedEnemy["health"]);
 
             if (selectedCharacter["health"] <= 0) {
-                $("#winlose").html("You lose! GAME OVER!");
+                $("#winlose").html("<div class='col-md-3'> <p>You lose! GAME OVER!</p> <button type='button' class='btn btn-primary btn-sm' id='restart'>Restart!</button>");
+                $("#restart").on('click', function() {
+                    location.reload();
+                });
+
                 //Reset button appears
             $("#button").attr("disabled", true);
             } else if (selectedEnemy["health"] <= 0) {
