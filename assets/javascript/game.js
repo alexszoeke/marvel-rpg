@@ -24,7 +24,7 @@ $(document).ready(function () {
         "attack": 20,
         "hammer": 0,
         "id": $("#thor")
-        //Hammer  enables "special features" for the attack property
+        //Hammer  enables "health boosts"
 
     }
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
         "attack": 20,
         "claws": 0,
         "id": $("#blackpanther")
-        //Claws enables "special features" for the attack property
+        //Claws enables "health boosts"
 
     };
 

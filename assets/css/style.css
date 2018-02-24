@@ -8,10 +8,15 @@ h2 {
     font-size: 20px;
 }
 
-/*Header*/
-.bg-light {
+/*Jumbotron*/
+.jumbotron {
     background-color: #fa5261!important;
     margin-bottom: 20px;
+    padding: 1rem 2rem;
+}
+
+#marvelimage {
+    height: 60%;
 }
 
 
@@ -19,7 +24,7 @@ h2 {
 .card {
     border: 1px solid #fa5261;
     width: 255px;
-    height: 180px;
+    height: 100%;
 }
 
 .card-footer {
@@ -42,7 +47,26 @@ h2 {
 }
 
 img {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
+    margin: auto 5px;
+}
+
+.btn-primary {
+    background-color: #fa5261;
+    color: black;
+    border-color: #fa5261;
+    font-weight: 500;
+}
+
+/*Fonts*/
+.card-header, .card-footer {
+    font-family: 'Squada One', cursive;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
 }
 

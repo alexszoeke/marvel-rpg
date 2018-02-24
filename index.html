@@ -8,15 +8,16 @@
     <title>MCU RPG Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Squada+One" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">
-            <h1>RPG GAME</h1>
-        </span>
-    </nav>
+        <div class="jumbotron jumbotron-fluid ">
+                <div class="container">
+                  <h1 class="display-4 justify-content-center"><img id= "marvelimage" src="./assets/images/marvellogo.png" alt = "Marvel Logo"></h1>
+                </div>
+              </div>
 
     <div class="container">
         <div class="row" id="characters">
@@ -27,7 +28,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text" id="thorimage">
-                            <img src="./assets/images/thor.jpg" alt="Thor">
+                            <img src="./assets/images/thor.jpg" alt="Thor" id="characterimg">
                         </p>
 
                     </div>
@@ -44,7 +45,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text" id="blackpantherimage">
-                            <img src="./assets/images/black-panther.jpg" alt="Black Panther">
+                            <img src="./assets/images/black-panther.jpg" alt="Black Panther" id="characterimg">
                         </p>
 
                     </div>
@@ -60,7 +61,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text" id="lokiimage">
-                            <img src="./assets/images/loki.png">
+                            <img src="./assets/images/loki.png" id="characterimg">
                         </p>
 
                     </div>
@@ -77,7 +78,7 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text" id="killmongerimage">
-                            <img src="./assets/images/killmonger.jpg">
+                            <img src="./assets/images/killmonger.jpg" id="characterimg">
                         </p>
 
                     </div>
@@ -103,7 +104,7 @@
 
         <div class="row" id="fight">
             <div class="col-md-3">
-                <button type="button" class="btn btn-primary btn-sm" id="attack">Attack!</button>
+                <button type="button" class="btn btn-primary btn-lg" id="attack">Attack!</button>
             </div>
         </div>
         <div class="row">
