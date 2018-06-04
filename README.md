@@ -1,4 +1,5 @@
 # Marvel RPG
+[Play here!](https://alexszoeke.github.io/marvel-rpg/)
 ## Rules
 
 1. Choose a starting character
